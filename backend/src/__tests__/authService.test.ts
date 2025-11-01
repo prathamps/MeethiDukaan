@@ -20,7 +20,7 @@ describe("AuthService", () => {
 		it("should register a new user successfully", async () => {
 			const mockUser = { id: 1, email: "test@example.com", is_admin: false }
 			;(bcrypt.hash as jest.Mock).mockResolvedValue("hashedPassword")
-			mockPool.query.mockResolvedValue({ rows: [mockUser] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [mockUser] })
 
 			const result = await authService.register(
 				"test@example.com",
@@ -38,7 +38,7 @@ describe("AuthService", () => {
 		it("should register an admin user", async () => {
 			const mockAdmin = { id: 1, email: "admin@example.com", is_admin: true }
 			;(bcrypt.hash as jest.Mock).mockResolvedValue("hashedPassword")
-			mockPool.query.mockResolvedValue({ rows: [mockAdmin] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [mockAdmin] })
 
 			const result = await authService.register(
 				"admin@example.com",
@@ -46,6 +46,7 @@ describe("AuthService", () => {
 				true
 			)
 
+			expect(result).toBeDefined()
 			expect(result.is_admin).toBe(true)
 		})
 	})
@@ -58,12 +59,13 @@ describe("AuthService", () => {
 				password: "hashedPassword",
 				is_admin: false,
 			}
-			mockPool.query.mockResolvedValue({ rows: [mockUser] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [mockUser] })
 			;(bcrypt.compare as jest.Mock).mockResolvedValue(true)
 			;(jwt.sign as jest.Mock).mockReturnValue("mockToken")
 
 			const result = await authService.login("test@example.com", "password123")
 
+			expect(result).toBeDefined()
 			expect(result).toHaveProperty("token", "mockToken")
 			expect(result.user).toEqual({
 				id: 1,
@@ -73,7 +75,7 @@ describe("AuthService", () => {
 		})
 
 		it("should throw error for non-existent user", async () => {
-			mockPool.query.mockResolvedValue({ rows: [] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [] })
 
 			await expect(
 				authService.login("nonexistent@example.com", "password123")
@@ -87,7 +89,7 @@ describe("AuthService", () => {
 				password: "hashedPassword",
 				is_admin: false,
 			}
-			mockPool.query.mockResolvedValue({ rows: [mockUser] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [mockUser] })
 			;(bcrypt.compare as jest.Mock).mockResolvedValue(false)
 
 			await expect(
@@ -99,7 +101,7 @@ describe("AuthService", () => {
 	describe("findUserByEmail", () => {
 		it("should find user by email", async () => {
 			const mockUser = { id: 1, email: "test@example.com", is_admin: false }
-			mockPool.query.mockResolvedValue({ rows: [mockUser] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [mockUser] })
 
 			const result = await authService.findUserByEmail("test@example.com")
 
@@ -107,7 +109,7 @@ describe("AuthService", () => {
 		})
 
 		it("should return null for non-existent user", async () => {
-			mockPool.query.mockResolvedValue({ rows: [] } as any)
+			;(mockPool.query as jest.Mock).mockResolvedValue({ rows: [] })
 
 			const result = await authService.findUserByEmail(
 				"nonexistent@example.com"
