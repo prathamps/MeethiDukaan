@@ -6,6 +6,8 @@ A full-stack web application for managing an Indian sweet shop with user authent
 
 This is a TDD-based Sweet Shop Management System built as part of a technical assessment. The application demonstrates modern full-stack development practices, clean code principles, and effective AI collaboration.
 
+<img width="3226" height="1380" alt="image" src="https://github.com/user-attachments/assets/936bf71c-418e-4dc2-b25e-bbbab0ea68eb" />
+
 ## Features
 
 Users can register and login securely with JWT authentication, browse the sweet catalog, search and filter by name/category/price, and purchase sweets with real-time inventory updates. The interface is fully responsive across mobile, tablet, and desktop.
