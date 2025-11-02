@@ -95,9 +95,10 @@ For testing the deployed application, use these credentials:
 
 ## Testing Approach
 
-I followed strict TDD for the backend with the Red-Green-Refactor pattern. Wrote 23 unit and integration tests covering business logic, authentication, and inventory management. Test coverage is above 70% across all metrics.
+I followed strict TDD for the backend with the Red-Green-Refactor pattern. Wrote 54 unit and integration tests covering business logic, authentication, and inventory management. Test coverage is above 70% across all metrics.
 
-<img width="1649" height="370" alt="image" src="https://github.com/user-attachments/assets/dff1ae5d-a335-4cbb-85b1-1479e50d2ea7" />
+<img width="1483" height="841" alt="image" src="https://github.com/user-attachments/assets/e681db57-4ffd-4816-931f-a60609639db4" />
+
 
 ## Design System
 
@@ -184,7 +185,7 @@ Passwords are hashed with bcrypt (10 rounds). JWT tokens handle authentication. 
 
 ## Test Results
 
-- **Backend**: 23 tests passing, 70%+ coverage
+- **Backend**: 54 tests passing, 70%+ coverage
 
 ## Deployment
 
