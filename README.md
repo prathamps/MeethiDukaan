@@ -1,5 +1,7 @@
 # Meethi Dukaan - Sweet Shop Management System
 
+Demo Link: https://meethi-dukaan.vercel.app/login
+
 A full-stack web application for managing an Indian sweet shop with user authentication, inventory management, and e-commerce functionality.
 
 ## Project Overview
@@ -55,7 +57,22 @@ cd backend
 npm test
 npm run test:coverage
 ```
+## Test Credentials
 
+For testing the deployed application, use these credentials:
+
+**Admin User:**
+
+- Email: `admin@test.com`
+- Password: `admin123`
+- Access: Full admin panel with inventory management
+
+**Regular User:**
+
+- Email: `userone@test.com`
+- Password: `userone123`
+- Access: Browse and purchase sweets
+  
 ## API Endpoints
 
 ### Authentication
@@ -80,9 +97,25 @@ npm run test:coverage
 
 I followed strict TDD for the backend with the Red-Green-Refactor pattern. Wrote 23 unit and integration tests covering business logic, authentication, and inventory management. Test coverage is above 70% across all metrics.
 
+<img width="1649" height="370" alt="image" src="https://github.com/user-attachments/assets/dff1ae5d-a335-4cbb-85b1-1479e50d2ea7" />
+
 ## Design System
 
 The theme is inspired by traditional Indian sweet shops - maroon (#8B1538) and gold (#D4AF37) accents on a cream (#FFF5ED) background. Using Playfair Display for headings and Inter for body text to blend traditional aesthetics with modern UX.
+
+<img width="2298" height="1328" alt="image" src="https://github.com/user-attachments/assets/c6d5985f-dae6-41ac-97e5-98a8b7acfbe3" />
+
+<img width="2215" height="1335" alt="image" src="https://github.com/user-attachments/assets/072e073d-0c30-43b6-9932-00c35dca9dd3" />
+
+<img width="1906" height="1347" alt="image" src="https://github.com/user-attachments/assets/af752b65-a019-49e1-b033-9eb47dfb1946" />
+
+<img width="1719" height="1328" alt="image" src="https://github.com/user-attachments/assets/bb620578-a296-4751-bfcf-731b7e40021a" />
+
+<img width="1734" height="1331" alt="image" src="https://github.com/user-attachments/assets/b994e0e4-b472-4089-b586-72b2596e91a7" />
+
+<img width="1707" height="1340" alt="image" src="https://github.com/user-attachments/assets/283018da-f06f-4b0a-a4f7-b7a599330bc9" />
+
+
 
 ## My AI Usage
 
